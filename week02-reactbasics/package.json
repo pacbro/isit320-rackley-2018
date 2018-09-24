@@ -1,0 +1,30 @@
+{
+  "name": "week02-reactbasics",
+  "version": "1.0.0",
+  "description": "learn react basics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pacbro/isit320-rackley-2018.git"
+  },
+  "keywords": [
+    "react",
+    "systemd"
+  ],
+  "author": "Jordan Rackley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pacbro/isit320-rackley-2018/issues"
+  },
+  "homepage": "https://github.com/pacbro/isit320-rackley-2018#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "webpack-dev-server": "^3.1.9"
+  }
+}
