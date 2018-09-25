@@ -4,11 +4,13 @@
   "description": "learn react basics",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node_modules/.bin/webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node_modules/.bin/webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pacbro/isit320-rackley-2018.git"
+    "url": "https://github.com/pacbro/isit320-rackley-2018.git"
   },
   "keywords": [
     "react",
@@ -21,10 +23,13 @@
   },
   "homepage": "https://github.com/pacbro/isit320-rackley-2018#readme",
   "devDependencies": {
+    "@babel/cli": "^7.1.0",
     "@babel/core": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
+    "babel-cli": "^6.26.0",
     "babel-loader": "^8.0.2",
     "webpack-dev-server": "^3.1.9"
-  }
+  },
+  "dependencies": {}
 }
