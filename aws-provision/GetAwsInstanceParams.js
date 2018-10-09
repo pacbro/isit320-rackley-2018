@@ -40,16 +40,16 @@ module.exports.awsEducate = () => {
     showAwsEducateCredentials();
     AWS.config.update({region:'us-east-1'});
     awsParams.ImageId = 'ami-0ac019f4fcb7cb7e6';
-    awsParams.KeyName = <KEY NAME>;
-    awsParams.SecurityGroupIds = [<SECURITY_GROUP_ID>];
+    awsParams.KeyName = 'isit320-ec2-rackley';
+    awsParams.SecurityGroupIds = ['sg-0ed718e4db3160105'];
     return getInstanceParams(awsParams);
 };
 
 module.exports.awsCharlie = () => {
     showAwsCharlieConfiguration();
     awsParams.ImageId = 'ami-0bbe6b35405ecebdb';
-    awsParams.KeyName = <KEY_NAME>;
-    awsParams.SecurityGroupIds = [<SECURITY_GROUP_ID>];
+    awsParams.KeyName = 'KEY_NAME';
+    awsParams.SecurityGroupIds = ['SECURITY_GROUP_ID'];
     return getInstanceParams(awsParams);
 };
 

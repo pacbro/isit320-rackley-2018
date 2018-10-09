@@ -36,4 +36,7 @@ if (program.provision) {
 
 if (program.educate) console.log('  - educate');
 
-
+if (program.educate) {
+    const awsInstanceParams = getAwsInstanceParams.awsEducate();
+    createInstance(awsInstanceParams);
+}
