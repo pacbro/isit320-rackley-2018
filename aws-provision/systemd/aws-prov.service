@@ -1,0 +1,18 @@
+[Unit]
+Description=Run Aws Provision
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/node ./bin/www
+WorkingDirectory=/bin/aws-prov
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=aws-prov
+User=ubuntu
+Group=ubuntu
+Environment=NODE_ENV=production
+Environment=AWSPROV_PORT=30025
+
+[Install]
+WantedBy=multi-user.target
