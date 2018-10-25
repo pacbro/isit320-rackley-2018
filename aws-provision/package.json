@@ -1,0 +1,19 @@
+{
+    "dependencies": {
+        "aws-sdk": "^2.328.0",
+        "commander": "^2.18.0"
+    },
+    "name": "aws-elf-sample",
+    "description": "A simple Node.js application showing usage of the AWS SDK for Node.js.",
+    "version": "1.0.0",
+    "main": "index.js",
+    "devDependencies": {},
+    "scripts": {
+        "start": "node Menu.js",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon ./bin/www",
+        "start-service": "node ./bin/www"
+    },
+    "author": "Charlie Calvert",
+    "license": "MIT"
+}
