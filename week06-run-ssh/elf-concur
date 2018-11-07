@@ -1,0 +1,8 @@
+#! /bin/bash
+
+create-react-app client
+CreateExpressProject server
+npm init -y
+npm install --save babel-cli babel-core express elven-code
+npm install --save-dev babel-eslint@9.0.0 concurrently eslint@5.6.0 eslint-config-google eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
+node edit-package-json.js
