@@ -1,0 +1,4 @@
+#! /bin/bash
+
+sudo systemctl stop systemcheck.service
+sudo systemctl disable systemcheck.service

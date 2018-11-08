@@ -1,0 +1,4 @@
+#! /bin/bash
+
+sudo systemctl enable systemcheck.service
+sudo systemctl start systemcheck.service

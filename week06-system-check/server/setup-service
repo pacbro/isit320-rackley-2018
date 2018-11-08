@@ -1,0 +1,9 @@
+#! /bin/bash
+
+function copyService() {
+    sudo cp -v systemcheck.service /etc/systemd/system/.
+    sudo systemctl enable systemcheck.service
+    sudo systemctl start systemcheck.service
+}
+
+copyService
