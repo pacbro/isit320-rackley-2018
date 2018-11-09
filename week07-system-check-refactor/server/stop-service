@@ -1,0 +1,4 @@
+#! /bin/bash
+
+sudo systemctl stop scref.service
+sudo systemctl disable scref.service

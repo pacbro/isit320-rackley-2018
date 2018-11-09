@@ -1,0 +1,4 @@
+#! /bin/bash
+
+sudo systemctl enable scref.service
+sudo systemctl start scref.service

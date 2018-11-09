@@ -1,0 +1,18 @@
+[Unit]
+Description=SystemCheck Refactor Service
+
+[Service]
+ExecStart=/home/bcuser/npm/bin/npm run start-service
+WorkingDirectory=/home/bcuser/bin/scref
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=scref
+User=bcuser
+Group=bcuser
+Environment=NODE_ENV=production
+Environment=ELF_SCREF_PORT=30030
+Environment=SETUP_LINUXBOX=/home/bcuser/Git/JsObjects/Utilities/SetupLinuxBox
+
+[Install]
+WantedBy=multi-user.target
