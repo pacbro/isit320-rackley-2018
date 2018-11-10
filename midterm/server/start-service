@@ -1,0 +1,4 @@
+#! /bin/bash
+
+sudo systemctl enable midterm.service
+sudo systemctl start midterm.service

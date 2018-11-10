@@ -7,13 +7,12 @@
 var app = require('../app');
 var debug = require('debug')('server:server');
 var http = require('http');
-var port = normalizePort(process.env.ELF_SCREF_PORT || '30030');
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.SERVER_PORT || '30026');
+var port = normalizePort(process.env.ELF_SCREF_PORT || '30030');
 app.set('port', port);
 
 /**
