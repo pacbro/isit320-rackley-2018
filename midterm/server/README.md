@@ -1,3 +1,0 @@
-# server
-
-by Charlie Calvert
