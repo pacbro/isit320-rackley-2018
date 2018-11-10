@@ -33,7 +33,8 @@ const runCpuInfo = (hostAddress, response) => {
                 });
         });
     }).connect({
-        ost: hostAddress,        port: 22,
+        ost: hostAddress,
+        port: 22,
         username: 'ubuntu',
         privateKey: require('fs').readFileSync(
             process.env.HOME + '/.ssh/isit320-ec2-rackley'
@@ -42,7 +43,7 @@ const runCpuInfo = (hostAddress, response) => {
 };
 
 router.get('/call-cpu-info', (request, response) => {
-    response.send({result: 'success'});
+    response.send({ result: 'success' });
 });
 
 runCpuInfo(hostAddress, response);

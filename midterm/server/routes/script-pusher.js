@@ -16,7 +16,11 @@ const check = (request, response, next) => {
         console.log('INSIDE REQUEST SCRIPT');
         if (!validOptions.includes(request.query.script)) {
             console.log('INSIDE REQUEST INVALID OPTION');
-            response.send({result: 'error', error: 'Invalid Option: ' + request.query.script, script: request.query.script});
+            response.send({
+                result: 'error',
+                error: 'Invalid Option: ' + request.query.script,
+                script: request.query.script
+            });
             return;
         }
     }
