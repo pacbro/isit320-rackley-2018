@@ -1,0 +1,5 @@
+public/static
+public/precache-manifest.*.js
+public/asset-manifest.json
+public/index.html
+public/service-worker.js
