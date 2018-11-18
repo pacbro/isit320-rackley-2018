@@ -1,0 +1,4 @@
+#! /bin/bash
+
+sudo systemctl stop midterm.service
+sudo systemctl disable midterm.service

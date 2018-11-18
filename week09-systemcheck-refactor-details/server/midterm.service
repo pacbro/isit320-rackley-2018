@@ -1,0 +1,17 @@
+[Unit]
+Description=Midterm Service
+
+[Service]
+ExecStart=/home/bcuser/npm/bin/npm run start-service
+WorkingDirectory=/home/bcuser/bin/midterm
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=midterm
+User=bcuser
+Group=bcuser
+Environment=NODE_ENV=production
+Environment=MIDTERM_PORT=30035
+
+[Install]
+WantedBy=multi-user.target

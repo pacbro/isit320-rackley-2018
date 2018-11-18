@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+
+echo "pushing all tags/branches/committed files"
+cd ~/Git/isit320-rackley-2018/
+git push --all
+git push --tags
+
+echo "All done"
