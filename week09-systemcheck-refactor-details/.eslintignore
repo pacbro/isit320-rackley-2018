@@ -12,3 +12,6 @@
 **/precache-manifest.*.js
 **/service-worker.js
 **/public/static/ service-worker.js precache-manifest.*.js
+
+"no-control-regex": "off"
+
