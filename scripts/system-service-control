@@ -43,7 +43,7 @@ echo 'System Service Control'
 echo 'Learn about Systemd and other running services.'
 
 while true; do
-    echo "Menu"    
+    echo -e "$LIGHT_BLUE Menu"    
     echo -e "$LIGHT_GREEN  a) Check Ports 30025-30040"
     echo -e "$LIGHT_GREEN  b) SystemCheck"
     echo -e "$LIGHT_GREEN  c) SystemCheckRefactor"
