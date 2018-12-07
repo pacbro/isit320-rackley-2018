@@ -30,8 +30,12 @@ if (program.associate) {
 }
 
 if (program.provision) {
-    console.log('To Provision your instance, just type the word Provision at the shell prompt.');
-    console.log('Provision is part of JsObjects is linked from the ~/bin directory.');
+    console.log(
+        'To Provision your instance, just type the word Provision at the shell prompt.'
+    );
+    console.log(
+        'Provision is part of JsObjects is linked from the ~/bin directory.'
+    );
 }
 
 if (program.educate) console.log('  - educate');

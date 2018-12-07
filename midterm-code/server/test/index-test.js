@@ -3,7 +3,6 @@ const request = require('supertest');
 const app = require('../app'); //reference to you app.js file
 
 describe('Test index.js', function() {
-
     it('should call foo route', function(done) {
         request(app)
             .get('/foo')
@@ -17,9 +16,7 @@ describe('Test index.js', function() {
             .get('/foo')
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
-            .expect({ file: 'api.js', result: 'success', 'status': 'bar' })
+            .expect({ file: 'api.js', result: 'success', status: 'bar' })
             .expect(200, done);
     });
-
 });
-

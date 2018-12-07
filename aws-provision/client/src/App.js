@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import 'whatwg-fetch';
@@ -20,50 +20,51 @@ class App extends Component {
             })
             .then(function(json) {
                 console.log('parsed json', json);
-                that.setState(foo => (json));
+                that.setState(foo => json);
             })
             .catch(function(ex) {
-                console.log('parsing failed, URL bad, network down, or similar', ex);
+                console.log(
+                    'parsing failed, URL bad, network down, or similar',
+                    ex
+                );
             });
-    }
-    
-    createEducate  = () => {
-        const that = this;
-        fetch('/create-educate')
     };
 
-    createWithAwsStandardAccount  = () => {
+    createEducate = () => {
         const that = this;
-        fetch('/create-standard')
+        fetch('/create-educate');
     };
 
-    associateElasticIp  = () => {
+    createWithAwsStandardAccount = () => {
         const that = this;
-        fetch('/associate-elastic-ip')
+        fetch('/create-standard');
     };
 
-    copyGetStarted  = () => {
+    associateElasticIp = () => {
         const that = this;
-        fetch('/script-pusher/copy-get-started')
+        fetch('/associate-elastic-ip');
     };
 
-    runGetStarted  = () => {
+    copyGetStarted = () => {
         const that = this;
-        fetch('/script-pusher/run-get-started')
+        fetch('/script-pusher/copy-get-started');
     };
 
-    removeKnownHost  = () => {
+    runGetStarted = () => {
         const that = this;
-        fetch('/script-pusher/remove-known-host')
+        fetch('/script-pusher/run-get-started');
     };
 
-    
+    removeKnownHost = () => {
+        const that = this;
+        fetch('/script-pusher/remove-known-host');
+    };
 
     render() {
         return (
             <div className="App">
                 <div className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
+                    <img src={logo} className="App-logo" alt="logo" />
                     <h2>Welcome to React</h2>
                 </div>
 
@@ -72,15 +73,21 @@ class App extends Component {
                 </p>
                 <button onClick={this.queryServer}>Bar</button>
                 <div>
-                    <button onClick={this.createEducate}>Create with AWS Educate Account</button>
-                    <button onClick={this.createWithAwsStandardAccount}>Create with AWS Standard Account</button>
-                    <button onClick={this.associateElasticIp}>Associate Elastic Ip</button>
-                    <button onClick={this.copyGetStarted}>Copy the GetStarted Script</button>
-                    <button onClick={this.removeKnownHost}>Remove from KnownHost</button>
-                    
-
-
-
+                    <button onClick={this.createEducate}>
+                        Create with AWS Educate Account
+                    </button>
+                    <button onClick={this.createWithAwsStandardAccount}>
+                        Create with AWS Standard Account
+                    </button>
+                    <button onClick={this.associateElasticIp}>
+                        Associate Elastic Ip
+                    </button>
+                    <button onClick={this.copyGetStarted}>
+                        Copy the GetStarted Script
+                    </button>
+                    <button onClick={this.removeKnownHost}>
+                        Remove from KnownHost
+                    </button>
                 </div>
             </div>
         );

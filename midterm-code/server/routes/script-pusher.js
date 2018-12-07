@@ -88,5 +88,4 @@ router.get('/foo', (request, response) => {
     });
 });
 
-
 module.exports = router;

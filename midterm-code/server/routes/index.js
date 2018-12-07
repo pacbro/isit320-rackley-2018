@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
 
 router.get('/foo', (request, response) => {
     'use strict';
-    response.send({ file: 'api.js',  result: 'success', status: 'bar' });
+    response.send({ file: 'api.js', result: 'success', status: 'bar' });
 });
 
 module.exports = router;

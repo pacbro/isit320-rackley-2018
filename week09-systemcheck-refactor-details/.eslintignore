@@ -1,4 +1,3 @@
-**public/static**
 **/registerServiceWorker.js
 **/serviceWorker.js
 **/bundle.js
@@ -11,7 +10,3 @@
 **/manifest.json
 **/precache-manifest.*.js
 **/service-worker.js
-**/public/static/ service-worker.js precache-manifest.*.js
-
-"no-control-regex": "off"
-

@@ -3,17 +3,17 @@ var router = express.Router();
 
 //copyGetStarted
 router.get('/copy-get-started', function(request, response) {
-  response.send({result: 'success'});
+    response.send({ result: 'success' });
 });
 
-//runGetStarted 
+//runGetStarted
 router.get('/run-get-started', function(request, response) {
-  response.send({result: 'success'});
+    response.send({ result: 'success' });
 });
 
-//removeKnownHost 
+//removeKnownHost
 router.get('/remove-known-host', function(request, response) {
-  response.send({result: 'success'});
+    response.send({ result: 'success' });
 });
 
 module.exports = router;

@@ -1,0 +1,39 @@
+#! /usr/bin/env bash
+
+if [[ -z $1 ]]; then
+    echo -e "======================================================"
+    echo -e "Pass in a parameter of a, b, or c."
+    echo -e " a) Run Client Server"
+    echo -e " b) Run Server"
+    echo -e " c) Start Service"
+    echo -e "======================================================"
+    exit
+fi
+
+function runClientServer() {
+    try-run-both build
+    cd ..
+}
+
+function runServer() {
+    cd client
+    pwd
+    ./build-copy-worker a
+    cd ../server
+    nohup node bin/www &
+    firefox http://localhost:${ELF_SYSTEM_CHECK_PORT}
+}
+
+function startService() {
+    cd server
+    pwd
+    ./run-setup-service
+}
+
+case $1 in
+    [Aa]* ) runClientServer; shift;;
+    [Bb]* ) runServer; shift;;
+    [Cc]* ) startService; shift;;
+    [XxQq]* ) break;;
+    *) echo -e "\n$NC" + "Please answer with a, b, c, or x.";;
+esac

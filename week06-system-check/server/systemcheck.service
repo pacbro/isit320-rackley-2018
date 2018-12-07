@@ -2,17 +2,17 @@
 Description=System Check Service
 
 [Service]
-ExecStart=/home/bcuser/npm/bin/npm run start-service
-WorkingDirectory=/home/bcuser/bin/systemcheck
+ExecStart=/home/jordan/npm/bin/npm run start-service
+WorkingDirectory=/home/jordan/bin/systemcheck
 Restart=always
 StandardOutput=syslog
 StandardError=syslog
 SyslogIdentifier=systemcheck
-User=bcuser
-Group=bcuser
+User=jordan
+Group=jordan
 Environment=NODE_ENV=production
 Environment=SERVER_PORT=30033
-Environment=SETUP_LINUXBOX=/home/bcuser/Git/JsObjects/Utilities/SetupLinuxBox
+Environment=SETUP_LINUXBOX=/home/jordan/Git/JsObjects/Utilities/SetupLinuxBox
 
 [Install]
 WantedBy=multi-user.target
