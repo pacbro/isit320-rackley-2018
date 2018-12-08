@@ -1,4 +1,4 @@
 #! /bin/bash
 
-sudo systemctl enable SERVICE_FILE
-sudo systemctl start SERVICE_FILE
+sudo systemctl enable temp.service
+sudo systemctl start temp.service

@@ -1,4 +1,4 @@
 #! /bin/bash
 
-sudo systemctl stop SERVICE_FILE
-sudo systemctl disable SERVICE_FILE
+sudo systemctl stop temp.service
+sudo systemctl disable temp.service

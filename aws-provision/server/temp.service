@@ -1,17 +1,17 @@
 [Unit]
-Description=SYSTEMD_DESCRIPTION
+Description=Temp Service
 
 [Service]
-ExecStart=/home/bcuser/npm/bin/npm run start-service
-WorkingDirectory=/home/bcuser/bin/SYSTEMD_PROJECT_NAME
+ExecStart=/home/jordan/npm/bin/npm run start-service
+WorkingDirectory=/home/jordan/bin/temp
 Restart=always
 StandardOutput=syslog
 StandardError=syslog
-SyslogIdentifier=SYSTEMD_PROJECT_NAME
-User=bcuser
-Group=bcuser
+SyslogIdentifier=temp
+User=jordan
+Group=jordan
 Environment=NODE_ENV=production
-Environment=SYSTEMD_PORT
+Environment=SERVER_PORT=30026
 
 [Install]
 WantedBy=multi-user.target
