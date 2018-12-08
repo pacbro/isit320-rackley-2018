@@ -1,10 +1,3 @@
-var express = require('express');
-var router = express.Router();
-
-const scriptPusher = require('./routes/script-pusher');
-
-var app = express();
-app.use('/', scriptPusher);
 const spawn = require('child_process').spawn;
 
 let allData = '';
@@ -77,6 +70,15 @@ router.get('/copy-script', function(request, response) {
             console.log(err);
             response.send(err);
         });
+});
+
+router.get('/foo', (request, response) => {
+    'use strict';
+    response.send({
+        file: 'script-pusher.js',
+        result: 'success',
+        status: 'script-pusher works'
+    });
 });
 
 module.exports = router;
