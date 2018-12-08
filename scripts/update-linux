@@ -1,0 +1,76 @@
+#!/bin/bash
+#by Jordan Rackley
+#Script to install relevant materials on new ubuntu distro
+
+
+echo "update all? y or n"
+read yesno  
+
+case "$yesno" in   #start case statement
+
+        [yY][eE][sS]|[yY])
+        echo "updating..."
+
+	echo "updating apt-get"
+
+	sudo sed -i -e 's/us.archive.ubuntu.com/archive.ubuntu.com/g' /etc/apt/sources.list
+	sudo apt-get update
+	sudo apt-get upgrade
+	sudo apt-get install wget
+	sudo apt-get install curl
+	sudo apt-get install git
+
+	echo "installing google chrome"
+	
+	sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -	
+	sudo echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list	
+	sudo apt-get update 
+	sudo apt-get install google-chrome-stable
+
+	echo "installing visual code"
+	
+	sudo curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+	sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+	sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+	sudo apt-get install apt-transport-https
+	sudo apt-get update
+	sudo apt-get install code 
+
+	DIR=~/Git
+	DIR2=~/Git/JsObjects
+
+	if [ ! -d "$DIR" ]; then  
+
+		echo "creating Git folder..."
+		mkdir "$DIR"
+	fi
+
+	if [ ! -d "$DIR2" ]; then 
+		echo "pulling JsObjects"
+		cd "$DIR"
+		sudo git clone https://github.com/charliecalvert/JsObjects.git
+	fi
+
+	cd "$DIR2"
+	sudo git pull	
+	
+	cd NodeInstall/
+	sudo ./NodeInstall.sh
+
+	echo "Setting up using jsobjects ubuntusetup"
+	cd ~/Git/JsObjects/Utilities/SetupLinuxBox
+	( sleep 15 ; printf "a" ) | ./UbuntuSetup
+
+	sudo source ~/.bashrc
+	
+	echo "ending script"
+
+	 ;;
+
+        *)
+        echo "exiting..."
+        exit
+
+	;;
+esac
+
