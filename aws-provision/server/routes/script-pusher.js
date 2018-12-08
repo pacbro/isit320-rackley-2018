@@ -1,9 +1,3 @@
-const scriptPusher = require('./routes/script-pusher');
-const qs = require('query-string');
-
-
-var app = express();
-app.use('/', scriptPusher);
 const spawn = require('child_process').spawn;
 
 let allData = '';
@@ -78,14 +72,16 @@ router.get('/copy-get-started', function(request, response) {
         });
 });
 
-router.get('/remove-known-host?ec2Ip=xxx.xxx.xxx.xxx', function(request, response) {
+router.get('/remove-known-host?ec2Ip=xxx.xxx.xxx.xxx', function(
+    request,
+    response
+) {
     const values = qs.parse(this.props.location.search);
     response.send({
         result: 'success',
         route: '/associate-elastic-ip' + values,
         ec2Ip: values.ec2Ip
-    })
-    
+    });
 });
 
 module.exports = router;

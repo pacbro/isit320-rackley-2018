@@ -1,0 +1,4 @@
+#! /bin/bash
+
+sudo systemctl stop temp.service
+sudo systemctl disable temp.service

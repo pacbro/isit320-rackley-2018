@@ -31,9 +31,7 @@ const runCpuInfo = (hostAddress, response) => {
                     allData += data;
                 });
         });
-    })
-    
-    .connect({
+    }).connect({
         host: hostAddress,
         port: 22,
         username: 'ubuntu',
@@ -43,23 +41,22 @@ const runCpuInfo = (hostAddress, response) => {
     });
 };
 
-
 router.get('/run-get-started', function(request, response) {
     console.log('run-get-started called in ssh-runner', hostAddress);
     getSshIp()
-        .then((result) => {
+        .then(result => {
             runUptime(result.hostName, result.identityFile, response);
         })
-        .catch((err) => {
+        .catch(err => {
             response.send(err);
         });
-
 });
 
-
-
 router.get('/call-cpu-info', (request, response) => {
-    response.send({ result: 'success' });
+    response.send({
+        result: 'success',
+        route: '/call-cpu-info'
+    });
 });
 
 router.get('/run-ubuntu-setup', (request, response) => {

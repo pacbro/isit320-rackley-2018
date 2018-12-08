@@ -1,17 +1,17 @@
 [Unit]
-Description=Midterm Service
+Description=Temp Service
 
 [Service]
 ExecStart=/home/jordan/npm/bin/npm run start-service
-WorkingDirectory=/home/jordan/bin/midterm
+WorkingDirectory=/home/jordan/bin/temp
 Restart=always
 StandardOutput=syslog
 StandardError=syslog
-SyslogIdentifier=midterm
+SyslogIdentifier=temp
 User=jordan
 Group=jordan
 Environment=NODE_ENV=production
-Environment=MIDTERM_PORT=30035
+Environment=SERVER_PORT=30026
 
 [Install]
 WantedBy=multi-user.target

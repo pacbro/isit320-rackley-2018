@@ -9,11 +9,11 @@
     "main": "index.js",
     "devDependencies": {},
     "scripts": {
-        "start": "node Menu.js",
-        "test": "echo \"Error: no test specified\" && exit 1",
         "start": "nodemon ./bin/www",
+        "test": "echo \"Error: no test specified\" && exit 1",
         "start-service": "node ./bin/www"
     },
+    "test": "mocha 'test/*-test.js'",
     "author": "Charlie Calvert",
     "license": "MIT"
 }

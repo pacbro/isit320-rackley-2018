@@ -1,0 +1,17 @@
+[Unit]
+Description=SYSTEMD_DESCRIPTION
+
+[Service]
+ExecStart=/home/bcuser/npm/bin/npm run start-service
+WorkingDirectory=/home/bcuser/bin/SYSTEMD_PROJECT_NAME
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=SYSTEMD_PROJECT_NAME
+User=bcuser
+Group=bcuser
+Environment=NODE_ENV=production
+Environment=SYSTEMD_PORT
+
+[Install]
+WantedBy=multi-user.target

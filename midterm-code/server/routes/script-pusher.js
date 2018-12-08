@@ -1,10 +1,3 @@
-var express = require('express');
-var router = express.Router();
-
-const scriptPusher = require('./routes/script-pusher');
-
-var app = express();
-app.use('/', scriptPusher);
 const spawn = require('child_process').spawn;
 
 let allData = '';
