@@ -5,6 +5,26 @@ const Client = require('ssh2').Client;
 const elfUtils = require('elven-code').elfUtils;
 const hostAddress = '35.175.4.96';
 
+const check = (request, response, next) => {
+    console.log('REQUEST CHECK CALLED', request.query);
+    const validOptions = ['CpuInfo', 'VersionCheck', 'uptime'];
+    if (request.query.script) {
+        console.log('INSIDE REQUEST SCRIPT');
+        if (!validOptions.includes(request.query.script)) {
+            console.log('INSIDE REQUEST INVALID OPTION');
+            response.send({
+                result: 'error',
+                error: 'Invalid Option: ' + request.query.script,
+                script: request.query.script
+            });
+            return;
+        }
+    }
+    next();
+};
+
+router.use(check);
+
 let allData = '';
 
 const runCpuInfo = (hostAddress, response) => {

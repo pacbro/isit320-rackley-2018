@@ -1,0 +1,9 @@
+#! /bin/bash
+
+function copyService() {
+    sudo cp -v SERVICE_FILE /etc/systemd/system/.
+    sudo systemctl enable SERVICE_FILE
+    sudo systemctl start SERVICE_FILE
+}
+
+copyService

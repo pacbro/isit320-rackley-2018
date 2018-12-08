@@ -39,8 +39,6 @@ function runAll() {
         copyNew
 }
 
-SERVER_DIR=echo $(cd ../server/public && pwd)
-
 
 while true; do
     message "Menu"    

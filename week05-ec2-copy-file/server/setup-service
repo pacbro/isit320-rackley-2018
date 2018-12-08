@@ -1,0 +1,9 @@
+#! /bin/bash
+
+function copyService() {
+    sudo cp -v temp.service /etc/systemd/system/.
+    sudo systemctl enable temp.service
+    sudo systemctl start temp.service
+}
+
+copyService
